@@ -1,0 +1,17 @@
+Создаем удаленный репозиторий, указывая имя учетной записи.
+
+curl -u 'USER_NAME' https://api.github.com/user/repos -d'{"name":"demo"}'
+
+Вводим пароль от учетной записи:
+
+    Enter host password for user 'USER_NAME':
+
+    Репозиторий demo создан.
+
+    введите сюда описание изображения
+
+    Теперь выгружаем проект.
+
+    git remote add origin https://github.com/USER_NAME/demo.git
+    git push -u origin master
+
