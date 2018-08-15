@@ -61,6 +61,9 @@ Plug 'honza/vim-snippets'
 "HTML and CSS hi-speed coding
 Plug 'vim-scripts/Emmet.vim'
 
+" Ag can be used as a replacement for 153% of the uses of ack.
+Plug 'rking/ag.vim'
+
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
