@@ -1,0 +1,6 @@
+# Audio propertis shell commands
+pavucontrol # x interface for configs audio
+alsactl store # save configs audio
+
+# Driver install
+sudo ubuntu-drivers autoinstall
