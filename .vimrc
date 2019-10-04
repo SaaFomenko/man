@@ -5,13 +5,21 @@
 set showcmd
 let g:mapleader=','
 packadd matchit
-set tabstop=4       " num space in tab
-set shiftwidth=4    
-set smarttab
-set expandtab       " tab = n space
-set smartindent
+" set tabstop=4        num space in tab
+" set shiftwidth=4    
+" set smarttab
+" set expandtab        tab = n space
+" set smartindent
 set hlsearch        " lighting search
 set incsearch       " lighting enter search
+
+" vim-editconfig
+let g:editorconfig_blacklist = {'filetype': ['git.*', 'fugitive'],
+\ 'pattern': ['\.un~$']}
+
+"let g:editorconfig_root_chdir
+let g:editorconfig_verbose = 1 " 0 by default
+
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark='hard' 
@@ -88,6 +96,12 @@ Plug 'easymotion/vim-easymotion'
 "Full path fuzzy file, buffer, mru, tag, ... finder for Vim
 Plug 'kien/ctrlp.vim'
 
+"Yet another Vim plugin for EditorConfig
+Plug 'sgur/vim-editorconfig'
+
+"Multiple line edit
+Plug 'osyo-manga/vim-over'
+
 " Initialize plugin system
 call plug#end()
 
@@ -95,3 +109,5 @@ call plug#end()
 map <C-n> :NERDTreeToggle<CR>
 "map <C-g> :GitGutterToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
+map \b :w<CR>:!python %<CR>
+map \bb :!python %<CR>
