@@ -1,0 +1,37 @@
+1. Для проверки и изменения настроек часового пояса в ubuntu 18.10 
+необходимо переключиться в консольный режим сочетанием клавиш
+CTRL-ALT-F2 или CTRL-ALT-F3
+2. Ввести логин и пароль(пароль при вводе не отображается на экране)
+log: support
+pass: Logart2000!
+3. Проверить текущие настройки даты и времени( ниже приведен пример 
+такой проверки где:
+support@xxxxx:~$ - приглашение для ввода команды
+timedatectl - команда для вывода информации о текущих настройках времени
+
+Пример 1:
+support@node01:~$ timedatectl
+               Local time: Ср 2019-04-17 12:13:36 MSK
+           Universal time: Ср 2019-04-17 09:13:36 UTC
+                 RTC time: Ср 2019-04-17 09:13:37
+                Time zone: Europe/Moscow (MSK, +0300)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+
+В примере 1 приведен корректный вывод времени, если строка "Time zone" 
+отличается  то для смены часового пояса необходимо выполнить последовательно
+следующии команды:
+sudo timedatectl set-timezone Europe/Moscow
+sudo unlink /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+timedatectl
+При вводе первой команды(sudo timedatectl set-timezone Europe/Moscow)
+будет запрошен пароль пользователя support, последняя команда( timedatectl )
+выведет информацию о текущих настройках даты и времени по идее время должно 
+соответствовать реальному Московскому.
+Для просмотра других поясов нужно выполнить команды:
+timedatectl list-timezones | grep -i europe
+timedatectl list-timezones | grep -i asia
+Выбрать для себя нужный и в командах выше заменить Europe/Moscow на нужный.
+

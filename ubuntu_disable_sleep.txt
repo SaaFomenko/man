@@ -1,0 +1,24 @@
+##run as root
+cd /etc/polkit-1/localauthority/50-local.d/
+touch com.ubuntu.disable-suspend.pkla
+nano com.ubuntu.disable-suspend.pkla
+##insert the following
+[Disable suspend (upower)]
+Identity=unix-user:*
+Action=org.freedesktop.upower.suspend
+ResultActive=no
+ResultInactive=no
+ResultAny=no
+[Disable suspend (logind)]
+Identity=unix-user:*
+Action=org.freedesktop.login1.suspend
+ResultActive=yes
+ResultInactive=no
+ResultAny=yes
+[Disable suspend when others are logged in (logind)]
+Identity=unix-user:*
+Action=org.freedesktop.login1.suspend-multiple-sessions
+ResultActive=yes
+ResultInactive=no
+ResultAny=yes
+##save and reboot system

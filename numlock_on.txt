@@ -1,0 +1,13 @@
+1. Для для автоматического включения numlock необходимо наличие интернета,
+переключиться в консольный режим сочетанием клавиш CTRL-ALT-F2 или CTRL-ALT-F3.
+2. Ввести логин и пароль(пароль при вводе не отображается на экране)
+3. Устанавливаем программу переключения в numlock командой:
+sudo apt install numlockx
+Будет выдан запрос на ввод пароля sudo, после ввода пароля программа при
+наличии интернета будет скачена и установлена.
+4. Для того чтобы она автоматом включала numlock необходимо выполнить следующую последовательность команд:
+sudo -i
+mv /home/user/.config/openbox/autostart /home/user/.config/openbox/autostart.backup
+echo "numlockx on &" > /home/user/.config/openbox/autostart
+cat /home/user/.config/openbox/autostart.backup >> /home/user/.config/openbox/autostart
+
