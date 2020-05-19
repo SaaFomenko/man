@@ -1,0 +1,3 @@
+﻿SSH
+Press Enter, ~, . one after the other to disconnect from a frozen session.
+The section "ESCAPE CHARACTERS" in the ssh man page explains the underlying details.

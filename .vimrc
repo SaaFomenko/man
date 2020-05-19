@@ -102,6 +102,9 @@ Plug 'sgur/vim-editorconfig'
 "Multiple line edit
 Plug 'osyo-manga/vim-over'
 
+" Haxe Plugin
+Plug 'jdonaldson/vaxe'
+
 " Initialize plugin system
 call plug#end()
 
